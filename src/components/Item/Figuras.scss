@@ -1,0 +1,34 @@
+.card{
+    max-width: 45em !important;
+    font-family: sans-serif !important; 
+    img{
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+.card-body{
+    
+    h5{
+        font-size: 1.8rem !important;
+        color: rgb(0, 255, 0);
+        font-weight: bold !important;
+        letter-spacing: .1rem !important;;
+    }
+    span{
+        font-weight: bold !important;
+        font-size: 1.2rem !important;
+    }
+    strong{
+        font-weight: 800 !important;
+        font-size: 1.2rem !important;
+    }
+    small{
+        font-size: 1rem !important;
+        font-weight: bold !important;
+    }
+}
+.desc{
+    letter-spacing: -.015em !important; 
+
+}

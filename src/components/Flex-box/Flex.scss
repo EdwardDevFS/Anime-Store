@@ -1,0 +1,32 @@
+.presentacion-f{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+}
+.titulo-f{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: .5em;
+    span{
+        color: aqua;
+    }
+}
+.subtitulo-f{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-top: .2em;
+    margin-bottom: .8em;
+
+}
+.f-item{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 95vw;
+    margin: 1em 2em 0em;
+    padding-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+}
