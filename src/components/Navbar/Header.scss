@@ -10,6 +10,9 @@ header{
         flex-wrap: nowrap;
         
     }
+    span{
+        color: aqua;
+    }
 }
 .container-fluid{
     width: 20% !important;
@@ -29,12 +32,13 @@ header{
 }
 .items-nav{
     margin: .2em;
+    justify-content: flex-end;
 }
 ul{
     display: flex;
     align-items: center;
     li{
-        margin: 0 1.2em;
+        margin: .5rem 1.2em;
         a{
             color: rgb(255, 255, 255);
             font-size: 1.2em;
@@ -43,7 +47,7 @@ ul{
             padding: .2em .5em;
             transition: all .4s cubic-bezier(0.84, 0.2, 0, 1.72);
             &:hover{
-                color: rgb(255, 0, 0);
+                color: aqua;
             }
         }
     }
@@ -68,4 +72,8 @@ ul{
     span{
         color: aqua;
     }
+}
+.EJANIME{
+    font-weight: bold;
+    font-size: 1.25rem;
 }

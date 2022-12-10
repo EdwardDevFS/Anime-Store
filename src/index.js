@@ -5,15 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
 // Import all of Bootstrap's CSS
-import "bootstrap/dist/css/bootstrap.css";
-import * as bootstrap from 'bootstrap'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChakraProvider>
-    <React.StrictMode>
       <App />
-    </React.StrictMode>
   </ChakraProvider>
   
 );

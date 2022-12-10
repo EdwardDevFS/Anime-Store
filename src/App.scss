@@ -1,11 +1,9 @@
 *{
-
   color: white;
   list-style-type: none;
   text-decoration: none !important;
   padding: 0;
   margin: 0;
-  
 }
 
 header{
@@ -26,6 +24,7 @@ header{
 section{
   background-color: #29323c;
   width: 100%;
-
-  
+  min-height: 100vh;
+  max-height: 800vh;
+  padding-top: 6em;
 }

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5em;
 }
 .titulo-f{
     font-size: 2.5rem;
@@ -21,12 +20,27 @@
 
 }
 .f-item{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 11px;
-    width: 95vw;
-    margin: 1em 2em 0em;
+    
+    
     padding-bottom: 1em;
-    align-items: center;
+}
+.so{
+    background-color: aqua;
+}
+// .left{
+//     width: 30%;
+//     height: 53em;
+//     background-color: aqua;
+//     border-radius: 1em;
+//     display: flex;
+//     flex-direction: column;
+// }
+.right{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px 40px;
+    margin-bottom: 2em;
 }
