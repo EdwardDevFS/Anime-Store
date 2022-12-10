@@ -35,18 +35,18 @@ function Header(){
                         </ul>
                     </li>
                     <li>
-                        <Link to="/">Anime Manga</Link>
+                        <Link to="/categoria/manga">Anime Manga</Link>
                     </li>
                     <li>
-                        <Link to="/">Funkos</Link>
+                        <Link to="/categoria/Funko">Funkos</Link>
                     </li>
                     <li>
-                        <a href="#">Figuras Anime</a>
+                        <Link to="/categoria/Figuras">Figuras Anime</Link>
                     </li>
                     
                     <div className="d-flex align-center ms-5 me-2 my-3">
                         <a href="https://ejanime.netlify.app/secciones/login-form.html" target="_blank">
-                        <Button>INGRESAR</Button>
+                        <Button className="noto">INGRESAR</Button>
 
                         </a>
                     </div>

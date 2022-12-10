@@ -10,6 +10,7 @@ function ItemList(props){
         {props.data.map((item)=>{
           return (
             <Item
+            id={item.id}
             url={item.url}
             alt={item.alt}
             title={item.title}

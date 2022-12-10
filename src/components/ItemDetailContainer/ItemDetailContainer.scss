@@ -4,54 +4,130 @@
     box-sizing: border-box;
 }
 
+input{
+    padding: .5rem !important;
+    border-radius: 14px;
+    width: 75% !important; 
 
-.Container {
-    width: 100%;
-    height: 100%;
+}
+.container{
+    background-color: rgba(0, 255, 225, 0.141) !important;
+    padding: 1em;
+    margin-bottom: 2em;
+    border-radius: 10px
 }
 .detail-container{
     width: 100%;
-    padding: 2em;
+    padding: 1rem 2em;
     display: flex;
     gap: 25px;
     align-items: stretch;
     justify-content: center;
 }
 .left-container{
-    width: 30%;
+    width: 60%;
     display: flex;
     flex-direction: column;
+    position: relative;
     img{
         width: 100%;
         height: 100%;
+        
     }
+    
 
+}
+.fav-iconn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1em 1.5em 0 0;
+    span{
+        color: aqua;
+        font-size: 3em !important;
+        font-weight: bold;
+        background-color: rgba(13, 215, 255, 0.475);
+        padding: 0px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover{
+            background-color:rgb(13, 215, 255) ;
+            color: #fff;
+        }
+    }
 }
 .right-container{
     width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .image-detail{
     width: 100%;
-    height: 100%;
+    height: 40em;
+    display: flex;
+    align-items:center;
+    justify-content: center;    
 
 }
 .header-container{
     
     h2{
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: bold;
+        text-transform: uppercase  !important; 
     }
+
+    
 }
 .info-detail{
     @extend .detail-container;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    small{
+        font-size: 1rem;
+        font-weight: bold;
+    }
 }
 .detail-sell{
     display: flex;
-    margin: .6em 7em 0 ;
-    justify-content: space-between;
+    margin: .6em 2em 0 ;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: row;
+}
+.cant{
+    display: flex;
+    gap:10px;
+    align-items:center;
+    justify-content:center;
+    font-weight: bold;
+    flex-wrap: wrap;
+    width: 10em;
+}
+.sell{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
+    h3{
+        font-size: 2rem;
+    }
+}
+.desc-det{
+    font-size: 1rem;
+    margin: 0 2.5em;
+    padding: 1rem;
+    background-color: rgba(0, 255, 255, 0.457);
+    border-radius: 14px;
+    text-align:justify;
+    margin: 2rem 0;
+
+    h2{
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0rem 0 1rem;
+    }
 }
