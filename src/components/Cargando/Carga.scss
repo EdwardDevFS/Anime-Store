@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+body{
+    
+    z-index: 1 !important;
+}
+span{
+    color: aqua;
+}
+.cuerpo_carga{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 255, 255, 0.537) !important;
+}
+.circle_load{
+    width: 13.3em;
+    height: 13.3em;
+    border-radius: 50%;
+    background-color: rgba(40, 35, 35, 0.905);
+    border: .25em solid rgb(0, 208, 255) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 0 1.5em;
+}
+.skeleton_carga{
+    z-index: -1 !important;
+    position: absolute;
+    width: 100%;
+    padding: 7em 5em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+
+        
+}

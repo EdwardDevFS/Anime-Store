@@ -2,16 +2,40 @@ import React, { useState, useEffect } from 'react'
 import { getSingleItem } from '../../services/promesas'
 import { useParams } from "react-router-dom"
 import './ItemDetailContainer.scss'
+import { Heading } from '@chakra-ui/react'
+import { 
+    Button,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    NumberIncrementStepper,
+    NumberDecrementStepper,
+    useToast } from '@chakra-ui/react'
+
 
 
 function ItemDetailContainer() {
     const [data, setData] = useState([]);
+    const [count, setCount] = useState([]);
     let params = useParams();
-
+    const toast = useToast()
+    const titulo = data.title
+    const carrito = []
     useEffect(() =>{  
     getSingleItem(params.id).then((respuesta) => setData(respuesta))
-    }, []);
-
+    }, [params.id]);
+    
+    const migrarDatos = () =>{
+        
+        carrito.push(data) ;
+        console.log(carrito);
+        let datos = JSON.stringify(carrito)
+        console.log(datos) 
+        let asd = JSON.parse(datos)
+        console.log(asd)
+        localStorage.setItem("aña",carrito)
+    }
+    
     return (
     <div className="container">
         <div className="detail-container">
@@ -28,10 +52,10 @@ function ItemDetailContainer() {
             </div>
             <div className="right-container text-center">
                 <div className="header-container">
-                    <h2>{data.title}</h2>
+                <Heading>{data.title}</Heading>
                     <div className="info-detail">
                         <small>Anime: {data.anime}</small>
-                        <small>{"By: "+data.autor}</small>
+                        <small>{data.autor? "Por "+data.autor: ""}</small>
                     </div>
                 </div>
                 <div className="desc-det">
@@ -43,10 +67,29 @@ function ItemDetailContainer() {
                         <label htmlFor="">Precio Unitario:</label>
                         <h3> S/{data.price}</h3>
                     </div>
-                    <div className="cant">
-                        <label htmlFor="">Cantidad: </label>
-                        <input type="number" className="form-control " id="validationTooltip05" required="" placeholder="asd"/>
+                    <div id="text-dark">
+                        <NumberInput defaultValue={"asdasd"} min={0} max={data.stock}>
+                        <NumberInputField />
+                        <NumberInputStepper>
+                            <NumberIncrementStepper />
+                            <NumberDecrementStepper />
+                        </NumberInputStepper>
+                        </NumberInput>
                     </div>
+                    
+                    <Button
+                    onClick={migrarDatos}
+                    //     toast({
+                    //     title: `El producto ${titulo} ha sido añadido a la Cartera`,
+                    //     description: "Puedes consultarlo con el botón para visualizar carrito o dandole click a este mensaje",
+                    //     status: 'success',
+                    //     duration: 9000,
+                    //     isClosable: true,
+                    // })
+                        
+                    >
+                    Show Toast
+                    </Button>
                 </div>
             </div>
         </div>

@@ -8,11 +8,15 @@ header{
         flex-direction: row;
         align-items: center;
         flex-wrap: nowrap;
+
         
     }
     span{
         color: aqua;
     }
+}
+.navBar{
+    z-index: -1 !important;
 }
 .container-fluid{
     width: 20% !important;

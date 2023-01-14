@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 function Item(props){
     let urlDetail = `/item/${props.id}`  
     return(
-        <div className="card mb-3 card-max text-bg-dark">
+        <div className="card mb-3 card-max text-dark">
             <div className="row g-0">
                 <div className="col-md-4 image-hover">
                     <img src={props.url} className="img-fluid rounded-start" alt={props.alt}/>
@@ -17,7 +17,7 @@ function Item(props){
                             <h5 className="card-title-style text-center">{props.title}</h5>
                             <div className="info">
                                 <small>Anime: {props.anime}</small>
-                                <small>{props.autor === undefined ? "": props.autor}</small>
+                                <small>{props.autor === undefined ? "": "Escrito por: "+props.autor}</small>
                             </div>
                         </div>
                         <div className="body-card text-center">
