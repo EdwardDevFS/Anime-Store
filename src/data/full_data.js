@@ -21,7 +21,7 @@ let data= [
         url:"https://zenstatic.blob.core.windows.net/blog/flq3vof4.ui1",
         alt:"Figuras One Punch Man",
         price: 120,
-        stock: 10
+        stock: 1
     },
     {
         id: 3,

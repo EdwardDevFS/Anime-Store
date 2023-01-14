@@ -10,7 +10,13 @@ import {
     NumberInputStepper,
     NumberIncrementStepper,
     NumberDecrementStepper,
-    useToast } from '@chakra-ui/react'
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
+    useToast,
+    Wrap,
+    WrapItem } from '@chakra-ui/react'
 
 
 
@@ -18,7 +24,20 @@ function ItemDetailContainer() {
     const [data, setData] = useState([]);
     const [count, setCount] = useState([]);
     let params = useParams();
+    let cant = document.querySelector('#aña');
+    let boton = document.querySelector('#dis');
     const toast = useToast()
+        const positions = [
+          'top',
+          'top-right',
+          'top-left',
+          'bottom',
+          'bottom-right',
+          'bottom-left',
+        ]
+        
+
+    
     const titulo = data.title
     const carrito = []
     useEffect(() =>{  
@@ -27,14 +46,30 @@ function ItemDetailContainer() {
     
     const migrarDatos = () =>{
         
-        carrito.push(data) ;
-        console.log(carrito);
-        let datos = JSON.stringify(carrito)
-        console.log(datos) 
-        let asd = JSON.parse(datos)
-        console.log(asd)
-        localStorage.setItem("aña",carrito)
+        // carrito.push(data) ;
+        // console.log(carrito);
+        // let datos = JSON.stringify(carrito)
+        // console.log(datos) 
+        // let asd = JSON.parse(datos)
+        // console.log(asd)
+        // localStorage.setItem("aña",carrito)
+        toast({
+            title: `El producto ${titulo} ha sido añadido a la Cartera`,
+            description: "Puedes consultarlo con el botón para visualizar carrito o dandole click a este mensaje",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+            
+        })
     }
+    // if(data.stock <= 0){
+    //     boton.disabled = true;
+    //     cant.disabled = true;
+    // }
+    // else{
+    //     boton.disabled = false
+    //     cant.disabled = false
+    // }
     
     return (
     <div className="container">
@@ -63,12 +98,22 @@ function ItemDetailContainer() {
                     <h3>{data.desc || data.sinopsis}</h3>
                 </div>
                 <div className="detail-sell">
+                    <div className="sell mt-2">
+                        <span>{data.stock <= 0 ? "No está disponible" : "Stock: "+data.stock+" und" }</span>
+                    </div>
                     <div className="sell">
                         <label htmlFor="">Precio Unitario:</label>
                         <h3> S/{data.price}</h3>
                     </div>
-                    <div id="text-dark">
-                        <NumberInput defaultValue={"asdasd"} min={0} max={data.stock}>
+                    <div className="sell">
+                        <label >Cantidad: </label>
+                        <NumberInput 
+                            defaultValue={0}
+                            min={0} 
+                            max={data.stock}
+                            id='aña'
+                            disabled
+                            >
                         <NumberInputField />
                         <NumberInputStepper>
                             <NumberIncrementStepper />
@@ -77,23 +122,22 @@ function ItemDetailContainer() {
                         </NumberInput>
                     </div>
                     
-                    <Button
-                    onClick={migrarDatos}
-                    //     toast({
-                    //     title: `El producto ${titulo} ha sido añadido a la Cartera`,
-                    //     description: "Puedes consultarlo con el botón para visualizar carrito o dandole click a este mensaje",
-                    //     status: 'success',
-                    //     duration: 9000,
-                    //     isClosable: true,
-                    // })
-                        
-                    >
-                    Show Toast
-                    </Button>
+                    
+                </div>
+                <div className="agregar text-dark mt-5">
+                    <Heading>{"Total: S/"}</Heading>
+                    <Button onClick={migrarDatos} 
+                          colorScheme='teal' variant='outline'
+                          bg='rgb(1, 8, 10)'
+                          id='dis'
+                          disabled
+                        >Agregar a la cartera</Button>
                 </div>
             </div>
         </div>
+        
     </div>
+    
     )
     }
 

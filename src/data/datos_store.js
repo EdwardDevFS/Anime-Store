@@ -8,7 +8,7 @@ let figuras= [
         url:"https://animecristal.com/wp-content/uploads/2021/05/Figuras-86-Eighty-Six-500x750.jpg",
         alt:"Figuras 86 Eighty Six",
         price: 120,
-        stock: 10
+        stock: 1
     },
     {
         categoria : "Figuras",
@@ -19,7 +19,7 @@ let figuras= [
         url:"https://zenstatic.blob.core.windows.net/blog/flq3vof4.ui1",
         alt:"Figuras One Punch Man",
         price: 120,
-        stock: 10
+        stock: 0
     },
     {
         categoria : "Figuras",
