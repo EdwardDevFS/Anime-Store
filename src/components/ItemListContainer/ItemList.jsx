@@ -25,6 +25,7 @@ function ItemList(props){
             stock={item.stock}
             anime={item.anime}
             autor={item.autor}
+            name={item.title}
             />
           )
         })}

@@ -16,7 +16,7 @@ import Carga from './components/Cargando/Carga';
 // Extraemos el componente provider
 
 
-
+//TODO NECESITAMOS SOLUCIONAR EL PROBLEMA DEL Z-INDEX ASÍ COMO UN CARRITO DE COMPRAS
 
 function App() {
   return (

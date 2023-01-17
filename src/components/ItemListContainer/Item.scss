@@ -13,6 +13,28 @@ body{
         object-fit: cover !important;
     }
 }
+.fav-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 7px 12.5px 0 0;
+}
+
+.fav-icon span{
+    font-size: 2.3em !important;
+    font-weight: bold;
+    background-color: #0c0f12;
+    color: rgb(255, 0, 0);
+    padding: 0px 11px;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover{
+
+        color: aqua;
+        background-color: rgba(0, 0, 0, 0.475);
+    }
+}
+
 
 .row{
     margin-right: 10px !important;

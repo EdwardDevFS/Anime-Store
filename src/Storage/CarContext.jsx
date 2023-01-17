@@ -4,10 +4,8 @@ import { createContext } from 'react'
 const cartContext =  createContext([])
 const Provider = cartContext.Provider;
 const value= {
-    cart: [],
-    saludo: "hola desde context prro"
+  favorito: false
 }
-
 
 
 
@@ -17,7 +15,7 @@ const value= {
 
 function CarContextProvider(props) {
   return (
-    <Provider value= {value}>
+    <Provider value={{value}}>
         {props.children}
     </Provider>
   )
