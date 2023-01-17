@@ -9,7 +9,7 @@ let data= [
         url:"https://animecristal.com/wp-content/uploads/2021/05/Figuras-86-Eighty-Six-500x750.jpg",
         alt:"Figuras 86 Eighty Six",
         price: 120,
-        stock: 10
+        stock: 1
     },
     {
         id: 2,

@@ -10,13 +10,8 @@ import {
     NumberInputStepper,
     NumberIncrementStepper,
     NumberDecrementStepper,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
     useToast,
-    Wrap,
-    WrapItem } from '@chakra-ui/react'
+    } from '@chakra-ui/react'
 
 
 
@@ -27,25 +22,29 @@ function ItemDetailContainer() {
     let cant = document.querySelector('#aña');
     let boton = document.querySelector('#dis');
     const toast = useToast()
-        const positions = [
-          'top',
-          'top-right',
-          'top-left',
-          'bottom',
-          'bottom-right',
-          'bottom-left',
-        ]
-        
-
-    
     const titulo = data.title
-    const carrito = []
-    useEffect(() =>{  
-    getSingleItem(params.id).then((respuesta) => setData(respuesta))
-    }, [params.id]);
+    const [Stock, setStock] = useState(0)
+    const [cantidad, setCantidad] = useState(0)
+    const [isloading, setIsLoading] = useState(true)
+    async function getData(){
+        let respuesta = await getSingleItem(params.id)
+        setData(respuesta);
+        setIsLoading(false)
+    }
     
-    const migrarDatos = () =>{
-        
+    useEffect(() =>{  
+        getData()
+        setStock(data.stock)
+    }, [] );
+    
+
+    // getSingleItem(params.id).then((respuesta) => setData(respuesta))
+
+    function obtenerCantidad(event){
+        setCantidad(event.target.value)
+    }
+
+    function migrarDatos(event) {
         // carrito.push(data) ;
         // console.log(carrito);
         // let datos = JSON.stringify(carrito)
@@ -53,15 +52,24 @@ function ItemDetailContainer() {
         // let asd = JSON.parse(datos)
         // console.log(asd)
         // localStorage.setItem("aña",carrito)
+
+        let stock = data.stock
+        let cant = cantidad
+        
+        setStock(stock-cant)
+        console.log(Stock)
         toast({
             title: `El producto ${titulo} ha sido añadido a la Cartera`,
-            description: "Puedes consultarlo con el botón para visualizar carrito o dandole click a este mensaje",
+            description: "Puedes consultarlo con el botón de arriba a la derecha para visualizar la cartera",
             status: 'success',
             duration: 9000,
-            isClosable: true,
-            
+            position: 'bottom-right',
+            isClosable: true,  
         })
+        event.target.disabled = true
+        
     }
+    
     // if(data.stock <= 0){
     //     boton.disabled = true;
     //     cant.disabled = true;
@@ -99,7 +107,7 @@ function ItemDetailContainer() {
                 </div>
                 <div className="detail-sell">
                     <div className="sell mt-2">
-                        <span>{data.stock <= 0 ? "No está disponible" : "Stock: "+data.stock+" und" }</span>
+                        <span>{data.stock <= 0 ? "No está disponible" : `Stock: ${Stock} und` }</span>
                     </div>
                     <div className="sell">
                         <label htmlFor="">Precio Unitario:</label>
@@ -108,11 +116,12 @@ function ItemDetailContainer() {
                     <div className="sell">
                         <label >Cantidad: </label>
                         <NumberInput 
-                            defaultValue={0}
-                            min={0} 
+                            onBlur={obtenerCantidad}
+                            defaultValue={1}
+                            min={1} 
                             max={data.stock}
-                            id='aña'
-                            disabled
+                            disabled={ data.stock === 0 ? true:false}
+                            id="sell" 
                             >
                         <NumberInputField />
                         <NumberInputStepper>
@@ -126,11 +135,11 @@ function ItemDetailContainer() {
                 </div>
                 <div className="agregar text-dark mt-5">
                     <Heading>{"Total: S/"}</Heading>
-                    <Button onClick={migrarDatos} 
+                    <Button onClick={migrarDatos}
+                          
                           colorScheme='teal' variant='outline'
                           bg='rgb(1, 8, 10)'
-                          id='dis'
-                          disabled
+                          disabled={data.stock === 0 ? true:false}
                         >Agregar a la cartera</Button>
                 </div>
             </div>
