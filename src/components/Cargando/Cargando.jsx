@@ -3,7 +3,7 @@ import './Carga.scss'
 import { Spinner,Heading, Skeleton, SkeletonCircle, SkeletonText  } from '@chakra-ui/react'
 
 
-function Carga() {
+function Cargando() {
 
     return (
     <>
@@ -77,4 +77,4 @@ function Carga() {
   )
 }
 
-export default Carga
+export default Cargando

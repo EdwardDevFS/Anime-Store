@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import { cartContext } from '../../Storage/CarContext'
 
 import ItemDetail from './ItemDetail'
-import Carga from '../Cargando/Carga'
+import Cargando from '../Cargando/Cargando'
 
 
 
@@ -36,7 +36,7 @@ function ItemDetailContainer() {
         
             isloading ?
 
-            <Carga/>
+            <Cargando/>
             :
             <ItemDetail data={data}/>
 

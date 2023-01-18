@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import './ItemDetailContainer.scss'
 import { Heading } from '@chakra-ui/react'
-import { Carga } from '../Cargando/Carga'
+import { Carga } from '../Cargando/Cargando'
 import { 
     Button,
     NumberInput,
@@ -19,7 +19,7 @@ function ItemDetail({ data }) {
     const {addToCart, removeItem} = useContext(cartContext)
     const [cantidad, setCantidad] = useState(0)
     const toast = useToast()    
-    let cant = 0
+    let cant = 1
     const titulo = data.title
 
     function obtenerCantidad(event){

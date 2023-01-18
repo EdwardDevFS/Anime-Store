@@ -1,9 +1,19 @@
 import React from 'react'
+import {
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+    Box,
+    MinusIcon,
+    AddIcon
+  } from '@chakra-ui/react'
 
 export default function Carrito(props) {
   return (
       <>
-          <button 
+<button 
             className={props.clase}    
             data-bs-toggle="offcanvas" 
             data-bs-target="#offcanvasRight" 
@@ -27,7 +37,6 @@ export default function Carrito(props) {
               ...
               </div>
           </div>
-  
       </>
   )
   }
