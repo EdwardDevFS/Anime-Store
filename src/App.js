@@ -2,11 +2,10 @@
 import './App.scss';
 import Footer from './components/Footer/Footer';
 import Header from './components/Navbar/Header';
-import Aside from './components/Aside/Aside';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { CarContextProvider } from './Storage/CarContext';
+import { CartContextProvider } from './Storage/CarContext';
 // `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
 import { Box } from "@chakra-ui/react"
 import Carga from './components/Cargando/Carga';
@@ -20,7 +19,7 @@ import Carga from './components/Cargando/Carga';
 
 function App() {
   return (
-    <CarContextProvider>
+    <CartContextProvider>
       <Box>
         <BrowserRouter>
           {/*Soy un comentario */}
@@ -39,7 +38,7 @@ function App() {
           <Footer/>
         </BrowserRouter>
       </Box>
-    </CarContextProvider>
+    </CartContextProvider>
   );
 }
 export default App;

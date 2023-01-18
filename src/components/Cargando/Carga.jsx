@@ -7,11 +7,7 @@ function Carga() {
 
     return (
     <>
-        <div className="skeleton_carga">
-            <Skeleton height='2.20em'>
-                <div>contents wrapped</div>
-                <div>won't be visible</div>
-            </Skeleton>
+        <div  className="skeleton_carga">
             <Skeleton height='2.20em'>
                 <div>contents wrapped</div>
                 <div>won't be visible</div>

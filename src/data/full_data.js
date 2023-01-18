@@ -5,11 +5,11 @@ let data= [
         title:"Figura Vladilena",
         anime: "Eighty Six",
         personaje: "vladilena",
-        desc:" Todos nuestros productos son completamente nuevos y los revisamos antes de proceder al envío definitivo, si hay algún producto deteriorado lo devolvemos automáticamente a nuestro distribuidor.",
+        desc:"Todos nuestros productos son completamente nuevos y los revisamos antes de proceder al envío definitivo, si hay algún producto deteriorado lo devolvemos automáticamente a nuestro distribuidor.",
         url:"https://animecristal.com/wp-content/uploads/2021/05/Figuras-86-Eighty-Six-500x750.jpg",
         alt:"Figuras 86 Eighty Six",
         price: 120,
-        stock: 1
+        stock: 6
     },
     {
         id: 2,
@@ -17,11 +17,11 @@ let data= [
         title:"Figura de Saitama",
         anime: "One punch man",
         personaje: "saitama",
-        desc:" Todos nuestros productos son completamente nuevos y los revisamos antes de proceder al envío definitivo, si hay algún producto deteriorado lo devolvemos automáticamente a nuestro distribuidor.",
+        desc:"Todos nuestros productos son completamente nuevos y los revisamos antes de proceder al envío definitivo, si hay algún producto deteriorado lo devolvemos automáticamente a nuestro distribuidor.",
         url:"https://zenstatic.blob.core.windows.net/blog/flq3vof4.ui1",
         alt:"Figuras One Punch Man",
         price: 120,
-        stock: 1
+        stock: 8
     },
     {
         id: 3,

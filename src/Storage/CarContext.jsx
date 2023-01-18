@@ -1,25 +1,67 @@
-import React from 'react'
-import { createContext } from 'react'
+import { createContext, useState } from "react";
 
-const cartContext =  createContext([])
+//1. inicializamos nuestro Context
+const cartContext = createContext({ cart: [] });
+
+//2. Extraemos el componente Provider
 const Provider = cartContext.Provider;
-const value= {
-  favorito: false,
-  cart: []
-}
 
+//4. creamos nuesro propio Provider
+function CartContextProvider(props) {
+  //3. Creamos un estado
+  const [cart, setCart] = useState([]);
 
+  let saludo = "hola desde context";
+  console.log(cart)
+  function addToCart(item, count) {
+    let indexItemInCart = cart.findIndex(
+      (itemInContext) => itemInContext.id === item.id
+    );
+    let isItemInCart = indexItemInCart !== -1;
+    const newCart = [...cart];
 
+    if (isItemInCart) {
+      newCart[indexItemInCart].count += count;
+      setCart(newCart);
+    } else {
+      //const newCart = cart.map( item => item )
 
-//TODO SE NECESITA LA FUNCIONALIDAD PARA AÑADIR COSAS A LA TIENDA, CREAR BOLETA Y SI SE PUEDE DARLE UNA VALIDACIÓN
+      /*  const newItem = item;
+            newItem.count = count; */
+      newCart.push({ ...item, count: count });
+      setCart(newCart);
+    }
+  }
 
+  //[ { title: iphone, count: 5}, {title: "hp", count: 15}]
+  let totalItemsInCart = 0;
+  cart.forEach((item) => (totalItemsInCart += item.count));
 
-function CarContextProvider(props) {
+  function totalItemsInCartfn() {
+    let totalItemsInCart = 0;
+    cart.forEach((item) => (totalItemsInCart += item.count));
+    return totalItemsInCart;
+  }
+
+  // function removeItem(id) -> filter
+
+  // function emptyCart() -> []
+
+  // totalPriceInCart() -> $$
+
   return (
-    <Provider value={{value}}>
-        {props.children}
+    <Provider
+      value={{
+        cart,
+        saludo,
+        addToCart,
+        totalItemsInCart,
+        totalItemsInCartfn,
+      }}
+    >
+      {props.children}
     </Provider>
-  )
+  );
 }
 
-export { cartContext, CarContextProvider };
+export { cartContext, CartContextProvider };

@@ -8,6 +8,7 @@ function Item(props){
     let urlDetail = `/item/${props.id}`  
     const context = useContext(cartContext)
     const [favorite, setFavorite] = useState(context.favorito)
+    console.log(context)
     const toast = useToast()
     let name = props.name
     let bgblackbasic = "#0c0f12"
@@ -16,12 +17,7 @@ function Item(props){
     //  background-color: rgba(0, 0, 0, 0.475), color: aqua
     // background-color: #0c0f12, color: rgb(255, 0, 0)
 
-    function changeColor(){
-
-    }
-    function noLogged(){
-
-    }
+    
     function isFavorite(){
         if(favorite !== true){
             toast({
