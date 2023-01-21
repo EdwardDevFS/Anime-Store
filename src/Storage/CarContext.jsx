@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import data from "../data/full_data";
 
 //1. inicializamos nuestro Context
 const cartContext = createContext({ cart: [] });
@@ -11,25 +12,32 @@ function CartContextProvider(props) {
   //3. Creamos un estado
   const [cart, setCart] = useState([]);
 
-  let saludo = "hola desde context";
-  console.log(cart)
   function addToCart(item, count) {
     let indexItemInCart = cart.findIndex(
       (itemInContext) => itemInContext.id === item.id
     );
     let isItemInCart = indexItemInCart !== -1;
     const newCart = [...cart];
-
+    
     if (isItemInCart) {
       newCart[indexItemInCart].count += count;
-      setCart(newCart);
+      item.stock = newCart[indexItemInCart].count - item.stock
+      if(item.stock < newCart[indexItemInCart].count){
+        alert("Pasaste el límite de Stock")
+      }
+      else{
+        setCart(newCart);
+      }
     } else {
       //const newCart = cart.map( item => item )
-
+      
       /*  const newItem = item;
-            newItem.count = count; */
+      newItem.count = count; */
+      item.stock = item.stock - count
       newCart.push({ ...item, count: count });
       setCart(newCart);
+      console.log(newCart)
+
     }
   }
 
@@ -41,6 +49,7 @@ function CartContextProvider(props) {
     let totalItemsInCart = 0;
     cart.forEach((item) => (totalItemsInCart += item.count));
     return totalItemsInCart;
+    console.log(totalItemsInCart)
   }
 
   // function removeItem(id) -> filter
@@ -53,7 +62,6 @@ function CartContextProvider(props) {
     <Provider
       value={{
         cart,
-        saludo,
         addToCart,
         totalItemsInCart,
         totalItemsInCartfn,

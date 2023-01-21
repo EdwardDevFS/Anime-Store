@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import getItems, { getItemsCategory } from '../../services/promesas'
+import { getItems, getItemsCategory } from '../../services/firebase'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import Cargando from '../Cargando/Cargando';
@@ -11,15 +11,17 @@ function ItemListContainer() {
   useEffect(() =>{
     if(category === undefined){
       getItems().then((respuesta) => setData(respuesta))
-      setTimeout((resolve)=>{
-        resolve(setIsLoading(false));
-    },3000);
+      new Promise((resolve) =>{
+        setTimeout(()=>{
+          resolve(setIsLoading(false));
+        },2000)}); 
     }
     else{
       getItemsCategory(category).then((respuestaFiltrada) => setData(respuestaFiltrada));
-      setTimeout((resolve)=>{
-        resolve(setIsLoading(false));
-    },3000);
+      new Promise((resolve) =>{
+        setTimeout(()=>{
+          resolve(setIsLoading(false));
+        },2000)}); 
     } 
   }, [category]);
 

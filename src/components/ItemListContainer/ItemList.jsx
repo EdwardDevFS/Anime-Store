@@ -6,11 +6,12 @@ import { cartContext } from '../../Storage/CarContext'
 
 function ItemList(props){
   const context = useContext(cartContext)
+  
   console.log(context)
   return (
     <>
     <Flex
-        titulo="CATALOGO DE PRODUCTOS"
+        titulo={"CATALOGO DE PRODUCTOS"}
         descripcion="Aquí encontrarás los mejores productos de alta calidad y a un precio cómodo">
         {props.data.map((item,i)=>{
           return (

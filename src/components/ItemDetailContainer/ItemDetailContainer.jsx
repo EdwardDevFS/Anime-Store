@@ -1,5 +1,5 @@
 import React, { useState, useEffect,useContext } from 'react'
-import { getSingleItem } from '../../services/promesas'
+import { getItems, getSingleItem } from '../../services/firebase'
 import { useParams } from "react-router-dom"
 
 import { cartContext } from '../../Storage/CarContext'
@@ -11,7 +11,6 @@ import Cargando from '../Cargando/Cargando'
 
 function ItemDetailContainer() {
     const [data, setData] = useState([]);
-    
     const [isloading, setIsLoading] = useState(true)
     let params = useParams();
 
@@ -24,6 +23,7 @@ function ItemDetailContainer() {
     
     useEffect(() =>{  
         getData()
+        getItems()
     }, [] );
     
 

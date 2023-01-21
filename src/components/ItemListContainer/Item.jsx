@@ -8,7 +8,6 @@ function Item(props){
     let urlDetail = `/item/${props.id}`  
     const context = useContext(cartContext)
     const [favorite, setFavorite] = useState(context.favorito)
-    console.log(context)
     const toast = useToast()
     let name = props.name
     let bgblackbasic = "#0c0f12"

@@ -16,22 +16,30 @@ import { cartContext } from '../../Storage/CarContext'
 
 
 function ItemDetail({ data }) {
-    const {addToCart, removeItem} = useContext(cartContext)
-    const [cantidad, setCantidad] = useState(0)
-    const toast = useToast()    
-    let cant = 1
-    const titulo = data.title
+    const {addToCart, removeItem} = useContext(cartContext);
 
+    const [cantidad, setCantidad] = useState(1);
+    const [itemsIn, setItemsIn] = useState(false);
+    
+    const toast = useToast();  
+    const titulo = data.title;
+    const cantidad_en_carrito = useContext(cartContext)
+    
     function obtenerCantidad(event){
-        cant = event.target.value
+        let cant = parseInt(event)
+        setCantidad(cant)
+        // cant = event.target.value
+        // setCantidad(cant)
         
-    }
+        // parseInt(cantidad)
+        // console.log(cantidad)
 
-    function migrarDatos(event) {
+    }
+    
+    function migrarDatos() {
 
         // let stock = data.stock
         // let cant = cantidad
-        setCantidad(cant)
         addToCart(data,cantidad)
         toast({
             title: `El producto ${titulo} ha sido añadido a la Cartera`,
@@ -41,8 +49,8 @@ function ItemDetail({ data }) {
             position: 'bottom-right',
             isClosable: true,  
         })
-        
-        
+        setItemsIn(true)
+
     }
 
 
@@ -91,11 +99,11 @@ function ItemDetail({ data }) {
                         <div className="sell">
                             <label >Cantidad: </label>
                             <NumberInput 
-                                onBlur={obtenerCantidad}
+                                onChange={obtenerCantidad}
                                 defaultValue={1}
                                 min={1} 
                                 max={data.stock}
-                                disabled={ data.stock === 0 ? true:false}
+                                disabled={ data.stock === 0 ? true:false || itemsIn ? true : false}
                                 id="sell" 
                                 >
                             <NumberInputField />
@@ -115,7 +123,7 @@ function ItemDetail({ data }) {
                         <></>
                         }
                         {
-                            cantidad ?
+                            itemsIn ?
                         
                             <Carrito clase="carrito px-3">Ir a la cartera</Carrito>
                             :
