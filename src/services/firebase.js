@@ -28,13 +28,10 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 export async function getSingleItem(itemId){
-  let id = 'kDIHw6RNYqKOabYtPwQp';
-  let docRef = doc(db,"products", id)
-  
+  let docRef = doc(db,"products", itemId)
   let docSnap = await getDoc(docRef)
   let item = docSnap.data()
   item.id = docSnap.id;
-  console.log(item)
   return item;
 }
 
@@ -54,7 +51,6 @@ export async function getItems(){
 export async function getItemsCategory(category){
   let collectionRef = collection(db, "products");
   let q = query(collectionRef, where("categoria","==", category))
-
   let docsSnap = await getDocs(q);
   let docsArray = docsSnap.docs;
   let dataDocs = docsArray.map(doc=>{

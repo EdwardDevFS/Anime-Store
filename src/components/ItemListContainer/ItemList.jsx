@@ -7,7 +7,6 @@ import { cartContext } from '../../Storage/CarContext'
 function ItemList(props){
   const context = useContext(cartContext)
   
-  console.log(context)
   return (
     <>
     <Flex

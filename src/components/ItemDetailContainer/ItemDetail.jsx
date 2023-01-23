@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import './ItemDetailContainer.scss'
 import { Heading } from '@chakra-ui/react'
+
 import { Carga } from '../Cargando/Cargando'
 import { 
     Button,
@@ -11,7 +12,7 @@ import {
     NumberDecrementStepper,
     useToast,
     } from '@chakra-ui/react'
-import Carrito from '../Carrito/Carrito'
+import Carrito from '../Carrito/Slide'
 import { cartContext } from '../../Storage/CarContext'
 
 

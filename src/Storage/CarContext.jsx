@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
-import data from "../data/full_data";
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 //1. inicializamos nuestro Context
 const cartContext = createContext({ cart: [] });
 
 //2. Extraemos el componente Provider
 const Provider = cartContext.Provider;
-
+const MySwal = withReactContent(Swal)
 //4. creamos nuesro propio Provider
 function CartContextProvider(props) {
   //3. Creamos un estado
@@ -21,22 +21,49 @@ function CartContextProvider(props) {
     
     if (isItemInCart) {
       newCart[indexItemInCart].count += count;
-      item.stock = newCart[indexItemInCart].count - item.stock
-      if(item.stock < newCart[indexItemInCart].count){
-        alert("Pasaste el límite de Stock")
+
+      if(newCart[indexItemInCart].count > item.stock){
+        let stock = item.stock
+        let rest =  newCart[indexItemInCart].count  - stock //7-6
+        
+        
+        MySwal.fire({
+          title: `Stock Excedido en ${rest}`,
+          text: `¿Desea usted agregar ${newCart[indexItemInCart].count  =- rest} a su carrito`,
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Si, agrega esa cantidad'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            MySwal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+            setCart(newCart);
+          }
+          else{
+            MySwal.fire({
+              icon: 'error',
+              title: 'No se pudo agregar al carrito',
+              text: 'El stock ha sido excedido',
+            })
+          }
+        })
+        }
+        
       }
-      else{
-        setCart(newCart);
-      }
-    } else {
+
+
+     else {
       //const newCart = cart.map( item => item )
       
       /*  const newItem = item;
       newItem.count = count; */
-      item.stock = item.stock - count
       newCart.push({ ...item, count: count });
       setCart(newCart);
-      console.log(newCart)
 
     }
   }

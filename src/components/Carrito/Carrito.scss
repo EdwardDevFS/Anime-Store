@@ -1,14 +1,178 @@
-.css-uttm9k {
-    justify-content: space-between !important;
-    border-radius: 1em !important;
-}
-.css-1lekzkb {
-    gap: 5em;
-}
+
 
 .css-17mg6aq {
-    
     border-radius: .1em !important;
     border-color: aqua !important;
     border: 4px solid;
+}
+.css-lb3q19{
+    width:100%;
+    justify-content: space-between;
+}
+.Titulo{
+    color: aqua;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.offcanvas{
+    cursor: auto !important;
+    width: 20em !important;
+}
+.css-882cgy{
+    display: flex;
+    width: 100% !important;
+    border-radius: 0 !important;
+    overflow: hidden;
+    max-width: 30em !important;
+   
+    .css-0{
+        display: flex;
+        position: relative;
+        justify-content:center;
+        align-items: center;
+        width: 36%;
+        overflow: hidden;
+        &:hover{
+            img{
+                transform: scale(1) !important;
+                opacity: .3;
+                background-color: red;
+                cursor: pointer;
+            }
+            button{
+                margin-bottom: 0em;
+            }
+        }
+        button{
+            transition: all .5s ease ;
+            opacity: 1 !important;
+            position: absolute !important;
+            background: black ;
+            cursor: pointer;
+            border: none;
+            padding: 14px 25px;
+            color: #fff;
+            font-size: 18px !important;
+            font-weight: bold;
+            position: relative;
+            border-radius: 12px; 
+            margin-bottom: 15em;
+            &:hover{
+                color: #fff;
+                background: #14191e;
+            }
+            &:before{
+                content: "";
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg,red,blue,deeppink,blue,red,blue,deeppink,blue);
+                background-size: 800%;
+                border-radius: 10px;
+                filter: blur(10px);
+                animation: glowing 20s linear infinite !important;
+                
+            }
+        }
+        img{
+            width: 100%;
+            min-height: 7.9em;
+            max-height: 10em;
+            transition: all 1s ease !important;
+        }
+    }
+    
+}
+.css-uttm9k{
+    justify-content: flex-end;
+}
+.css-rmlqu9{
+    width: 64%;
+    padding: 0 .6em 1em !important;
+    font-size: 1.2rem;
+    overflow: hidden;
+}
+
+.css-1hiix9{
+    font-size: 20px !important;
+}
+.css-1hb5ode{
+    padding: 0 !important;
+}
+.css-kiplau {
+    border-top-width: 1px !important;
+    border-color: aqua !important;
+    padding-bottom: 0em;
+}
+.css-k008qs{
+    padding-top: .25em;
+    span{
+        padding-top: 0;
+        font-size: 1.20rem;
+    }
+}
+
+.image-hover{
+    overflow:hidden;
+    flex-wrap: nowrap;
+    display: flex;
+    position: relative;
+    justify-content:center;
+    align-items: center;
+    z-index: 1;
+    &:hover a{
+        visibility: visible;
+        margin:0 0 0 0em !important;
+        color: rgb(255, 255, 255);
+        
+    }
+    &:hover img{
+        transform: scale(1.1) !important;
+        opacity: .5;
+        cursor: pointer;
+    }
+    img{
+        transition: all 1s ease !important;
+        z-index: -1;
+    }
+
+    a{
+        transition: all .5s ease ;
+        opacity: 1 !important;
+        position: absolute !important;
+        background: black ;
+        cursor: pointer;
+        border: none;
+        padding: 16px 32px;
+        color: #fff;
+        font-size: 24px !important;
+        font-weight: bold;
+        position: relative;
+        border-radius: 12px; 
+        visibility: hidden;
+        margin:0 0 20em!important;
+        &:hover{
+            color: #fff;
+            background: #14191e;
+            
+        }
+        &::before{
+            content: "";
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg,rgb(255, 255, 255),rgb(0, 213, 255),rgba(0, 34, 255, 0.757),rgb(0, 213, 255),rgb(255, 255, 255),rgb(0, 213, 255),rgba(0, 34, 255, 0.757),rgb(0, 213, 255));
+            background-size: 800%;
+            border-radius: 10px;
+            filter: blur(10px);
+            animation: glowing 20s linear infinite !important;
+        
+        }
+    }
 }

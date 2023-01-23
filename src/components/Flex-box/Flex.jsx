@@ -2,7 +2,7 @@ import "./Flex.scss";
 import Aside from '../Aside/Aside';
 function Flex(props){
     return (
-        <>
+        <div className="tuto">
             <div className="presentacion-f">
                 <h1 className="titulo-f">{props.titulo}</h1>
                 <h5 className="subtitulo-f">{props.descripcion}</h5>
@@ -15,7 +15,7 @@ function Flex(props){
                     {props.children}
                 </div>
             </div>
-        </>
+        </div>
     )
     
 }

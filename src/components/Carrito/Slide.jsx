@@ -1,7 +1,7 @@
 import React from 'react'
 import CarritoDetail from './CarritoDetail'
 
-export default function Carrito(props) {
+export default function Slide(props) {
   return (
       <>
         <button 
@@ -17,7 +17,7 @@ export default function Carrito(props) {
             id="offcanvasRight" 
             aria-labelledby="offcanvasRightLabel">
             <div className="offcanvas-header">
-                <h5 className="offcanvas-title" id="offcanvasRightLabel">Cartera de articulos</h5>
+                <h5 className="offcanvas-title" id="offcanvasRightLabel">CARTERA D<span>E PRODUCTOS</span></h5>
                 <button 
                     type="button" 
                     className="btn-close btn-close-white" 

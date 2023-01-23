@@ -1,18 +1,24 @@
 body{
     background-color: #29323c !important;
 }
+.content{
+    min-height: 50vh !important;
+    max-height: 700vh !important;
+}
 .card{
     max-width: 45em !important;
     font-family: sans-serif !important;
     background-color: #14191e !important;
-    
     border-radius: 1em  !important;
+    height: 22em !important;
+    overflow: hidden !important;
         img{
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
     }
 }
+
 .fav-icon{
     position: absolute;
     top: 0;
