@@ -95,9 +95,11 @@ const CarritoDetail = () => {
           )}
       </AccordionItem>
 
-))}
-    <ButtonMio Tipo="btn btn-outline-warning button_asd_1">Register</ButtonMio>
-    <ButtonMio Tipo="btn btn-outline-success button_asd">Finalizar compra</ButtonMio>
+))} 
+    <div className="botones">
+      <ButtonMio Tipo="btn btn-outline-warning button_asd_1">Register</ButtonMio>
+      <ButtonMio Tipo="btn btn-outline-success button_asd">Finalizar compra</ButtonMio>
+    </div>
     </Accordion>
   )
 }

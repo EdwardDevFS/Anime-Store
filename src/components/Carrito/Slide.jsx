@@ -17,7 +17,7 @@ export default function Slide(props) {
             id="offcanvasRight" 
             aria-labelledby="offcanvasRightLabel">
             <div className="offcanvas-header">
-                <h5 className="offcanvas-title" id="offcanvasRightLabel">CARTERA D<span>E PRODUCTOS</span></h5>
+                <h5 className="offcanvas-title ps-2" id="offcanvasRightLabel">CARTERA D<span>E PRODUCTOS</span></h5>
                 <button 
                     type="button" 
                     className="btn-close btn-close-white" 

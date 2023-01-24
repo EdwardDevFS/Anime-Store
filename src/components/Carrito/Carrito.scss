@@ -176,10 +176,20 @@
         }
     }
 }
+.botones{
+    display: flex;
+    position: absolute;
+    bottom: 1.5em;
+    right: .5em;
+    
+}
 .button_asd{
     font-size: .8em !important;
     font-weight: bold !important;
-    position: absolute;
-    bottom: 1.5em;
-    right: 2em;
+    margin-right: 1em;
+}
+.button_asd_1{
+    @extend .button_asd;
+
+
 }
