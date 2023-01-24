@@ -15,12 +15,15 @@ import {
     } from '@chakra-ui/react'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import './Carrito.scss'
+import ButtonMio from '../Buttons/ButtonMio'
 
 
 const CarritoDetail = () => {
 
   const { cart } = useContext(cartContext);
-  
+  const clickeado = (evt) =>{
+    evt.stopPropagation();
+  }
 
   return (
     <Accordion allowMultiple>
@@ -28,7 +31,7 @@ const CarritoDetail = () => {
       <AccordionItem key={i} pb={2}>
       {({ isExpanded }) => (
         <>
-          <AccordionButton display={isExpanded ? 'none': 'block'}>
+          <AccordionButton display={isExpanded ? 'none': 'block'} onClick={clickeado}>
             <Box as="span"  display='flex' alignItems='center' justifyContent="spaceBetween" >
               <Image
                   objectFit='cover'
@@ -72,7 +75,7 @@ const CarritoDetail = () => {
 
                 <Box fontWeight='semibold' as='h5'>
                   Precio unitario:
-                  S/{data.price * data.count} soles
+                  S/{data.price} soles
 
                 </Box>
                 <Box display='flex'>
@@ -93,7 +96,8 @@ const CarritoDetail = () => {
       </AccordionItem>
 
 ))}
-    
+    <ButtonMio Tipo="btn btn-outline-warning button_asd_1">Register</ButtonMio>
+    <ButtonMio Tipo="btn btn-outline-success button_asd">Finalizar compra</ButtonMio>
     </Accordion>
   )
 }

@@ -1,5 +1,4 @@
 import "./Flex.scss";
-import Aside from '../Aside/Aside';
 function Flex(props){
     return (
         <div className="tuto">
