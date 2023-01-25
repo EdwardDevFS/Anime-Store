@@ -104,13 +104,24 @@ function ItemDetail({ data }) {
                                 defaultValue={1}
                                 min={1} 
                                 max={data.stock}
+                                size='lg'
                                 disabled={ data.stock === 0 ? true:false || itemsIn ? true : false}
                                 id="sell" 
                                 >
                             <NumberInputField />
                             <NumberInputStepper>
-                                <NumberIncrementStepper />
-                                <NumberDecrementStepper />
+                                <NumberIncrementStepper
+                                bg='green.200'
+                                size='md'
+                                _active={{ bg: 'green.300' }}
+                                children='+'
+                                />
+                                <NumberDecrementStepper
+                                bg='pink.300'
+                                size='md'
+                                _active={{ bg: 'pink.300' }}
+                                children='-'
+                                />
                             </NumberInputStepper>
                             </NumberInput>
                         </div>

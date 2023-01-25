@@ -1,17 +1,35 @@
 .todo{
     height: 100vh;
     flex-direction: column;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.576) 0%, rgba(0, 191, 255, 0.124) 100%) ,url(https://wallpaperaccess.com/full/6604090.gif);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
+label{
+    color:aqua;
 }
 .asd{
-    background-color: #171923a5;
+    background-color: #171923e9;
     width: 40em !important;
-    height: 70vh;
+    height: 75vh;
     border-radius: 1em;
-    padding: 1.5em;
-
+    padding: 1em 2em;
+    margin-top: 4em;
 
 }
 .Title{
-    margin: 1em 0 .2em;
-    font-size: 3.8rem !important;
+    text-align: center;
+    font-size: 3rem !important;
+}
+.Footer_form{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+.etc{
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+
 }

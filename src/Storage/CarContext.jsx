@@ -95,7 +95,6 @@ function CartContextProvider(props) {
     let totalItemsInCart = 0;
     cart.forEach((item) => (totalItemsInCart += item.count));
     return totalItemsInCart;
-    console.log(totalItemsInCart)
   }
 
   // function removeItem(id) -> filter

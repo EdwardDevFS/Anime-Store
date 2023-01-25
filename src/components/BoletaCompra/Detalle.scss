@@ -1,0 +1,25 @@
+.section-boleta{
+    width: 100%;
+    min-height: 100vh;
+    max-height: 700vh;
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    .boleta-pago{
+        margin: 3.5em 0 3em;
+        width: 70vw;
+        min-height: 70vh;
+        max-height: 700vh;
+        background-color: #171923f0;
+        padding: 2em;
+        border-radius: 1em;
+        .detalle-products{
+            display: flex;
+            flex-direction: column;
+            .heading-detail{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}

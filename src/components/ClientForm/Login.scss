@@ -1,0 +1,54 @@
+.todo-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    label{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    input{
+        font-size: 1.4rem;
+        font-weight: bold;    
+    }
+    .bg-container{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.576) 0%, rgba(0, 191, 255, 0.124) 100%) ,url(https://wallpaperaccess.com/full/5927911.gif);
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .LoginForm{
+            width: 40em;
+            height: 30em;
+            margin-top: 5em;
+            background-color: #171923f0;
+            padding: 2em 3em;
+            border-radius: 1em;
+        }
+        .Login-title{
+            font-size: 3em !important;
+        }
+        .body-form{
+            margin-top: 1.7em;
+        }
+        .Login-Buttom{
+            font-size: 1.5em !important;
+            font-weight: bold !important;
+            margin-top: 1.8em;
+            padding: .25em 1.25em;
+            background-color: rgba(0, 0, 0, 0.882) !important;
+            &:hover{
+                background-color: rgba(1, 83, 90, 0.657) !important;
+            }
+        }
+        .Checkbutton-form{
+            margin-top: 1em;
+            span{
+                color: #fff;
+            }
+        }
+    }
+}   

@@ -12,6 +12,9 @@ import '@fontsource/open-sans/700.css'
 import { ChakraProvider,Box  } from '@chakra-ui/react'
 import Register from './components/ClientForm/Register';
 import theme from './theme'
+import LoginUser from './components/ClientForm/LoginUser';
+import DetalleCompra from './components/BoletaCompra/DetalleCompra';
+import BoletaCompra from './components/BoletaCompra/BoletaCompra';
 // m={2} refers to the value of `theme.space[2]`
 // Inicializamos el context
 // Extraemos el componente provider
@@ -34,8 +37,11 @@ function App() {
                 <Route path="/" element={ <ItemListContainer/>} />
                 <Route path="/categoria/:category" element={ <ItemListContainer/>} />
                 <Route path="/item/:id" element={ <ItemDetailContainer/>} />
-                <Route path="/prueba" element={ <Register/>} />
-                <Route path="*" element={ <img src="https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg" className="w-100 h-100 p-absolute" /> } />
+                <Route path="/register" element={ <Register/>} />
+                <Route path="/login" element={ <LoginUser/>} />
+                <Route path="/confirm/:id_user" element={ <DetalleCompra/>} />
+                <Route path="/prueba" element={ <BoletaCompra/>} />
+                <Route path="*" element={<img src="https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg" className="w-100 h-100 p-absolute" /> } />
               </Routes>
               </section>
               <Footer/>
