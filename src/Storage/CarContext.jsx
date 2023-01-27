@@ -25,9 +25,6 @@ function CartContextProvider(props) {
         let stock = item.stock
         let rest =  newCart[indexItemInCart].count  - stock //12-6
         let suf = dv - rest
-        console.log(dv)
-        console.log(rest)
-        console.log(suf)
         if(newCart[indexItemInCart].count !== stock){
           MySwal.fire({
             title: `Stock Excedido en ${rest}`,
@@ -39,17 +36,17 @@ function CartContextProvider(props) {
             confirmButtonText: 'Si, agrega esa cantidad'
           }).then((result) => {
             if (result.isConfirmed) {
-
               MySwal.fire(
                 'Agregado al carrito',
                 `${suf} productos fueron agregados a su cartera`,
                 'success'
               )
               newCart[indexItemInCart].count = item.stock
+              item.total = newCart[indexItemInCart].count * item.price 
               setCart(newCart);
-              console.log("Linea 52",newCart[indexItemInCart].count)
               console.log(newCart)
-
+              
+              
             }
             else{
               newCart[indexItemInCart].count -= count
@@ -58,8 +55,6 @@ function CartContextProvider(props) {
                 title: 'No se pudo agregar al carrito',
                 text: 'El stock ha sido excedido',
               })
-              console.log("Linea 63 Count",newCart[indexItemInCart].count)
-              console.log("Linea 64 Stock",item.stock)
             }
           })
         }
@@ -79,7 +74,7 @@ function CartContextProvider(props) {
       
       /*  const newItem = item;
       newItem.count = count; */
-      newCart.push({ ...item, count: count });
+      newCart.push({ ...item, count: count});
       setCart(newCart);
       console.log("No tendría porque aserse")
 

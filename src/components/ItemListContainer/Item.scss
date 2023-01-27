@@ -1,17 +1,14 @@
 body{
     background-color: #29323c !important;
 }
-.content{
-    min-height: 50vh !important;
-    max-height: 700vh !important;
-}
+
 .card{
     max-width: 45em !important;
     font-family: sans-serif !important;
     background-color: #14191e !important;
     border-radius: 1em  !important;
-    height: 22em !important;
-    overflow: hidden !important;
+    height: 24em !important;
+    overflow: auto !important;
         img{
         width: 100% !important;
         height: 100% !important;
@@ -93,7 +90,6 @@ body{
     
 }
 .card-max{
-    max-height: 80em !important;
     overflow: auto;
 }
 .info{

@@ -1,14 +1,27 @@
-.tuto{
-    height:100vh;
-}
+
 .presentacion-f{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 6.5em;
+    margin-top: 5em;
+    position: relative;
+    z-index: 1;
+    background-color: #17192393;
+    padding: 2em;
+}
+.tuto{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.576) 0%, rgba(0, 191, 255, 0.124) 100%) ,
+    url(https://i.pinimg.com/originals/90/3e/0d/903e0d89b4303fe514a751067a14bce8.gif);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1000;
 }
 .titulo-f{
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     z-index: -2 !important;
 
@@ -19,7 +32,7 @@
 }
 .subtitulo-f{
     z-index: -2 !important;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     letter-spacing: 5px;
     margin-top: .2em;

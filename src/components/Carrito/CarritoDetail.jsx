@@ -12,8 +12,6 @@ import {
     FormLabel,
     Heading,
     Button,
-    useDisclosure,
-    ScaleFade
     } from '@chakra-ui/react'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import './Carrito.scss'
@@ -24,7 +22,6 @@ import { Link } from 'react-router-dom'
 const CarritoDetail = () => {
 
   const { cart } = useContext(cartContext);
-  const { isOpen, onToggle } = useDisclosure()
 
   return (
     <Accordion allowMultiple>
@@ -32,7 +29,7 @@ const CarritoDetail = () => {
       <AccordionItem key={i} pb={2}>
       {({ isExpanded }) => (
         <>
-          <AccordionButton display={isExpanded ? 'none': 'block'} onClick={onToggle}>
+          <AccordionButton display={isExpanded ? 'none': 'block'} >
             <Box as="span"  display='flex' alignItems='center' justifyContent="spaceBetween" >
               <Image
                   objectFit='cover'
@@ -48,7 +45,6 @@ const CarritoDetail = () => {
                   )}
             </Box>
           </AccordionButton>
-          <ScaleFade initialScale={1} in={isOpen}>
             <AccordionPanel pb={4}>
               <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' >
                 <Box>
@@ -61,7 +57,7 @@ const CarritoDetail = () => {
                     <Badge borderRadius='full' px='2' colorScheme='teal'>
                       Nuevo
                     </Badge>
-                    <AccordionButton onClick={onToggle}>
+                    <AccordionButton>
                       <MinusIcon fontSize='12px' />
                     </AccordionButton>
                   </Box>
@@ -93,7 +89,6 @@ const CarritoDetail = () => {
                 </Box>
               </Box>
             </AccordionPanel>
-          </ScaleFade>
         </>
           )}
       </AccordionItem>
@@ -107,7 +102,7 @@ const CarritoDetail = () => {
           Register
         </ButtonMio>
       </Link>
-      <Link to="/login">
+      <Link to="/prueba">
         <ButtonMio Tipo="btn btn-outline-success button_asd">Finalizar compra</ButtonMio>
       </Link>
     </div>

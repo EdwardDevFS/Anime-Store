@@ -1,18 +1,27 @@
 .section-boleta{
     width: 100%;
-    min-height: 100vh;
-    max-height: 700vh;
     margin-top: 5em;
     display: flex;
     justify-content: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.576) 0%, rgba(0, 191, 255, 0.124) 100%) ,
+                        url(https://openseauserdata.com/files/425826d55c531c22b579d4773c68adb5.gif);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: contain;
+
     .boleta-pago{
-        margin: 3.5em 0 3em;
-        width: 70vw;
-        min-height: 70vh;
-        max-height: 700vh;
-        background-color: #171923f0;
+        margin: 2.5em 0 3em;
+        width: 65vw;
+        background-color: #171923c7;
         padding: 2em;
         border-radius: 1em;
+        transition: all .5s ease;
+        &:hover{
+            background-color: #0c0d12;
+        }
         .detalle-products{
             display: flex;
             flex-direction: column;
@@ -20,6 +29,58 @@
                 display: flex;
                 justify-content: space-between;
             }
+            img{
+                width: 6em;
+                height: 6em;
+                object-fit: cover;
+            }
+
+
+            .footer_detail_sale{
+                width: 100% !important;  
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: end;
+                width: 20em;
+                position: relative;
+                right: 1em;
+                gap: 1em;
+                margin-top: 1em;
+
+                label{
+                    color: white;
+                    font-size: 1.25rem !important;
+                    font-weight: bold;
+                }
+                .price_caption{
+                    display: flex;
+                    flex-direction: column;
+                }
+                .detail_caption{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
+                table{
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    text-align: right;
+                }
+
+            }
+            .footer_detail{
+                position: relative;
+                margin: 2em 2em 0;
+                bottom: 0;
+                button{
+                    margin-top: .5em;
+                    margin-bottom: 1.5em;
+                    padding: .8em 1.8em !important;
+                }
+
+            }
+            
         }
     }
 }
