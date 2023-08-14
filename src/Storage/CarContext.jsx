@@ -13,78 +13,29 @@ function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
 
   function addToCart(item, count) {
-    let indexItemInCart = cart.findIndex(
-      (itemInContext) => itemInContext.id === item.id
-    );
-    let isItemInCart = indexItemInCart !== -1;
-    const newCart = [...cart];
-    let dv = count 
-    if (isItemInCart) {
-      newCart[indexItemInCart].count += count
-      if(newCart[indexItemInCart].count > item.stock){
-        let stock = item.stock
-        let rest =  newCart[indexItemInCart].count  - stock //12-6
-        let suf = dv - rest
-        if(newCart[indexItemInCart].count !== stock){
-          MySwal.fire({
-            title: `Stock Excedido en ${rest}`,
-            text: `¿Desea agregar ${suf ? "Item invalid" : suf} unidades a su cartera?`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, agrega esa cantidad'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              MySwal.fire(
-                'Agregado al carrito',
-                `${suf} productos fueron agregados a su cartera`,
-                'success'
-              )
-              newCart[indexItemInCart].count = item.stock
-              item.total = newCart[indexItemInCart].count * item.price 
-              setCart(newCart);
-              console.log(newCart)
-              
-              
-            }
-            else{
-              newCart[indexItemInCart].count -= count
-              MySwal.fire({
-                icon: 'error',
-                title: 'No se pudo agregar al carrito',
-                text: 'El stock ha sido excedido',
-              })
-            }
-          })
-        }
-        else{
-          MySwal.fire({
-            icon: 'error',
-            title: 'No se pudo agregar más items',
-            text: 'El stock ha sido excedido',
-          })
-        }
+    const newCart = [...cart]
+    let itemValidator = newCart.findIndex((index)=> index.id === item.id)
+    if(itemValidator != -1){
+      if((newCart[itemValidator].stock - count) < 0){
+        MySwal.fire({
+          icon: 'error',
+          title: 'El stock ha sido excedido',
+          text: 'Por favor, tenga en cuenta el stock permitido.'
+        })
+        return
       }
+      newCart[itemValidator].stock =- count
+      console.log(newCart)
+      return
     }
+    newCart.push(item)
+    setCart(newCart)
+    console.log(cart)
+   
 
-
-    else {
-      //const newCart = cart.map( item => item )
-      
-      /*  const newItem = item;
-      newItem.count = count; */
-      newCart.push({ ...item, count: count});
-      setCart(newCart);
-      console.log("No tendría porque aserse")
-
-
-    }
   }
 
   //[ { title: iphone, count: 5}, {title: "hp", count: 15}]
-  let totalItemsInCart = 0;
-  cart.forEach((item) => (totalItemsInCart += item.count));
 
   function totalItemsInCartfn() {
     let totalItemsInCart = 0;
@@ -103,7 +54,6 @@ function CartContextProvider(props) {
       value={{
         cart,
         addToCart,
-        totalItemsInCart,
         totalItemsInCartfn,
       }}
     >

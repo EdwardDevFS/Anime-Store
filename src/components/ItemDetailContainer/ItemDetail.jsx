@@ -26,15 +26,8 @@ function ItemDetail({ data }) {
     const titulo = data.title;
     const cantidad_en_carrito = useContext(cartContext)
     
-    function obtenerCantidad(event){
-        let cant = parseInt(event)
-        setCantidad(cant)
-        // cant = event.target.value
-        // setCantidad(cant)
-        
-        // parseInt(cantidad)
-        // console.log(cantidad)
-
+    function obtenerCantidad(cant){
+        setCantidad(parseInt(cant))
     }
     
     function migrarDatos() {

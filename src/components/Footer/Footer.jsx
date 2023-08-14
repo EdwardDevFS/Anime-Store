@@ -5,12 +5,10 @@ function Footer(){
     return (
         <footer>
             <Box className="Footer_content">
-                <Box>
-                    <Heading>E<span>J</span> Anime<span> Store</span></Heading>
-                    <Heading className="mt-1" as='h4' size='md'>
-                        Creado por Edward Josue Mamani M. 
-                    </Heading>
-                </Box>
+                <div className="d-flex flex-column gap-2">
+                    <h4 className="footer-text"><span>ANIME LEVELS</span> STORE</h4>
+                    <h5>Developed by Edward Josue</h5>
+                </div>                
                 <Box className="Icons">
                     <Link to=""><Button colorScheme='linkedin'>Linkedin</Button></Link>
                     <Link to=""><Button colorScheme='facebook'>Facebook</Button></Link>

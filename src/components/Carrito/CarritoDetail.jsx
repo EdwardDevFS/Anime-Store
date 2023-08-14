@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { cartContext } from '../../Storage/CarContext'
 import {
     Accordion,
@@ -18,6 +18,10 @@ import './Carrito.scss'
 import ButtonMio from '../Buttons/ButtonMio'
 import { Link } from 'react-router-dom'
 
+
+const handleClick = (params) =>{
+  console.log("hola amigos,", params)
+}
 
 const CarritoDetail = () => {
 
@@ -49,7 +53,7 @@ const CarritoDetail = () => {
               <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' >
                 <Box>
                   <Image src={data.url} alt={data.alt} />
-                  <Button>Eliminar</Button>
+                  <Button onClick={handleClick.bind(null,data)}>Eliminar</Button>
                 </Box>
     
                 <Box p={6}>
