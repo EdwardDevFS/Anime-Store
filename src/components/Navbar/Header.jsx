@@ -12,7 +12,7 @@ function Header(){
         
         <nav className="navBar navbar-dark bg-dark fixed-top"> {/*fixed-top*/}
             <div className="titulo container-fluid ms-5">
-                <Link to="/"><h1 className="">EJ <span>ANIME</span> Store</h1></Link>
+                <Link to="/"> <b><h2 className="">Anime <span>Levels</span> Store</h2></b></Link>
             </div>
             <nav className="items-nav me-5">
                 <ul className="list-ul">

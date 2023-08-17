@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react'
 import './ItemDetailContainer.scss'
 import { Heading } from '@chakra-ui/react'
-
-import { Carga } from '../Cargando/Cargando'
 import { 
     Button,
     NumberInput,

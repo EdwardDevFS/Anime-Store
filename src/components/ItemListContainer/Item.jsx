@@ -4,6 +4,7 @@ import { cartContext } from '../../Storage/CarContext';
 import { useState, useContext } from "react"
 import { useToast } from '@chakra-ui/react'
 
+
 function Item(props){
     let urlDetail = `/item/${props.id}`  
     const context = useContext(cartContext)

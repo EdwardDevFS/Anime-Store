@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
-import './Carga.scss'
+import React from 'react';
+import './Loading.scss'
 import { Spinner,Heading} from '@chakra-ui/react'
 
-
-
-function Cargando({loading}) {
-    const [isLoading, setIsloading] = useState(loading)
-
-    
+function Loading() {
     return (
     <>
-       {isLoading ?<div className='cuerpo_carga'>
+        <div className='cuerpo_carga'>
             <div className='circle_load bg-dark'>
                 <div className="mb-3">
                 <Heading size='xl' fontSize='2rem'>EJ <span>ANIME</span></Heading>
@@ -23,10 +18,10 @@ function Cargando({loading}) {
                     size='xl'
                     />
             </div>
-        </div> : null}
+        </div>
     </>
 
   )
 }
 
-export default Cargando
+export default Loading

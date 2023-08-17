@@ -15,7 +15,7 @@ import theme from './theme'
 import LoginUser from './components/ClientForm/LoginUser';
 import DetalleCompra from './components/BoletaCompra/DetalleCompra';
 import { exportItemsToFirestore } from './services/firebase';
-import Cargando from './components/Cargando/Cargando';
+
 // m={2} refers to the value of `theme.space[2]`
 // Inicializamos el context
 // Extraemos el componente provider
@@ -23,14 +23,13 @@ import Cargando from './components/Cargando/Cargando';
 //TODO NECESITAMOS SOLUCIONAR EL PROBLEMA DEL Z-INDEX ASÍ COMO UN CARRITO DE COMPRAS
 
 function App() {
+
   return (
     
     <CartContextProvider>
       <ChakraProvider theme={theme}>
           <Box>
             <BrowserRouter>
-              {/*Soy un comentario */}
-              <Cargando loading={true}>
               <header className="">
                 <Header/>
               </header>
@@ -47,7 +46,6 @@ function App() {
               </Routes>
               </section>
               <Footer/>
-              </Cargando>
             </BrowserRouter>
           </Box>
       </ChakraProvider>
